@@ -27,8 +27,8 @@ export function remarkYoutube() {
       if (!match) continue;
       const videoId = match[1];
 
-      const htmlNode: Node = {
-        type: 'html' as const,
+      const htmlNode: any = {
+        type: 'html',
         value: `<div class="relative w-full pt-[56.25%] my-4"><iframe class="absolute inset-0 w-full h-full rounded-lg border border-gray-200 dark:border-gray-700" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>`,
       };
 
