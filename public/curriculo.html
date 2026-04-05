@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículo - Gustavo Mendes</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 40px 50px;
+      color: #1a1a1a;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+    a { color: #2563eb; text-decoration: none; }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      font-size: 15px;
+      color: #2563eb;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .contact {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 20px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .contact span { display: flex; align-items: center; gap: 4px; }
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #2563eb;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 2px solid #2563eb;
+      padding-bottom: 4px;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+    .exp-item {
+      margin-bottom: 20px;
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+    .exp-company {
+      font-weight: 700;
+      font-size: 15px;
+      color: #111;
+    }
+    .exp-role {
+      font-size: 13px;
+      color: #555;
+      font-style: italic;
+    }
+    .exp-period {
+      font-size: 12px;
+      color: #888;
+    }
+    .exp-desc {
+      font-size: 13px;
+      color: #333;
+      margin-top: 4px;
+      padding-left: 16px;
+    }
+    .exp-desc li {
+      margin-bottom: 2px;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .tag {
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .edu-item {
+      margin-bottom: 12px;
+    }
+    .edu-school {
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .edu-period {
+      font-size: 12px;
+      color: #888;
+    }
+    .cert-item {
+      font-size: 13px;
+      color: #333;
+    }
+    .lang-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .lang-item {
+      padding: 4px 16px;
+      background: #f8fafc;
+      border-radius: 4px;
+    }
+    .lang-name {
+      font-weight: 600;
+      color: #1e293b;
+    }
+    .lang-level {
+      font-size: 12px;
+      color: #64748b;
+    }
+    .summary-text {
+      font-size: 13px;
+      color: #333;
+      line-height: 1.6;
+    }
+    @media print {
+      body { padding: 20px 40px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Gustavo Mendes</h1>
+  <p class="subtitle">Software Engineer</p>
+  <div class="contact">
+    <span>Cotia, SP — Brasil</span>
+    <span>|</span>
+    <span><a href="https://linkedin.com/in/gustamms/">linkedin.com/in/gustamms</a></span>
+    <span>|</span>
+    <span><a href="https://github.com/gustamms">github.com/gustamms</a></span>
+  </div>
+
+  <h2 class="section-title">Resumo</h2>
+  <p>Software Engineer com 4 anos de experiência em desenvolvimento de software. Sólida experiência em desenvolvimento de APIs, microsserviços e aplicações web. Familiaridade com múltiplas tecnologias incluindo Go, TypeScript, PHP, React e cloud (AWS). Certificado AWS Cloud Practitioner.</p>
+
+  <h2 class="section-title">Experiência Profissional</h2>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <span class="exp-company">PicPay</span>
+      <span class="exp-period">Atual</span>
+    </div>
+    <div class="exp-role">Software Engineer</div>
+    <ul class="exp-desc">
+      <li>Desenvolvimento e manutenção de microsserviços para a plataforma de pagamentos</li>
+      <li>Construção de APIs RESTful e integração com serviços de terceiros</li>
+      <li>Trabalho com tecnologias como Go, TypeScript e PHP</li>
+      <li>Colaboração com times de produto e engenharia em sprints ágeis</li>
+    </ul>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <span class="exp-company">Experiências Anteriores</span>
+      <span class="exp-period">2022 — 2024</span>
+    </div>
+    <ul class="exp-desc">
+      <li>Desenvolvimento de aplicações web e APIs</li>
+      <li>Participação em projetos com diferentes stacks tecnológicos</li>
+      <li>Criação e manutenção de APIs e serviços backend</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">Educação</h2>
+
+  <div class="edu-item">
+    <div class="edu-school">Análise e Desenvolvimento de Sistemas — Descomplica Faculdade Digital</div>
+    <div class="edu-period">2025</div>
+  </div>
+
+  <h2 class="section-title">Certificações</h2>
+
+  <div class="cert-item">
+    <strong>AWS Certified Cloud Practitioner</strong> — Amazon Web Services<br>
+    <span class="edu-period">2023</span>
+  </div>
+
+  <h2 class="section-title">Habilidades Técnicas</h2>
+
+  <div class="tag-list">
+    <span class="tag">Go</span>
+    <span class="tag">TypeScript</span>
+    <span class="tag">JavaScript</span>
+    <span class="tag">PHP</span>
+    <span class="tag">React</span>
+    <span class="tag">Next.js</span>
+    <span class="tag">Node.js</span>
+    <span class="tag">REST APIs</span>
+    <span class="tag">Microsserviços</span>
+    <span class="tag">AWS</span>
+    <span class="tag">Git</span>
+    <span class="tag">Docker</span>
+    <span class="tag">PostgreSQL</span>
+    <span class="tag">MySQL</span>
+  </div>
+
+  <h2 class="section-title">Idiomas</h2>
+
+  <div class="lang-grid">
+    <div class="lang-item">
+      <div class="lang-name">Português</div>
+      <div class="lang-level">Nativo</div>
+    </div>
+    <div class="lang-item">
+      <div class="lang-name">Inglês</div>
+      <div class="lang-level">Avançado</div>
+    </div>
+    <div class="lang-item">
+      <div class="lang-name">Espanhol</div>
+      <div class="lang-level">Intermediário</div>
+    </div>
+  </div>
+</body>
+</html>
