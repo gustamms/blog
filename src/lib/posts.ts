@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import remarkHtml from 'remark-html';
+import { remarkYoutube } from './youtube';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -73,7 +74,7 @@ export async function getPostAsHtml(slug: string) {
     return null;
   }
 
-  const processedContent = await remark().use(remarkHtml).process(post.content);
+  const processedContent = await remark().use(remarkYoutube).use(remarkHtml).process(post.content);
   const contentHtml = processedContent.toString();
 
   return { ...post, contentHtml };

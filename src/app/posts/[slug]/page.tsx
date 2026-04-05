@@ -21,18 +21,18 @@ export default async function PostPage({
 
   return (
     <article>
-      <Link href="/" className="text-blue-600 hover:underline text-sm mb-4 inline-block">
+      <Link href="/" className="text-blue-600 dark:text-blue-400 hover:underline text-sm mb-4 inline-block">
         &larr; Voltar aos posts
       </Link>
 
       <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
 
-      <div className="flex items-center gap-3 mb-6 text-sm text-gray-500">
+      <div className="flex items-center gap-3 mb-6 text-sm text-gray-500 dark:text-gray-400">
         <time>{post.date}</time>
         {post.tags.length > 0 && (
           <div className="flex flex-wrap gap-1.5">
             {post.tags.map((tag) => (
-              <span key={tag} className="bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full text-xs">
+              <span key={tag} className="bg-blue-50 dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded-full text-xs">
                 {tag}
               </span>
             ))}
@@ -40,10 +40,10 @@ export default async function PostPage({
         )}
       </div>
 
-      <p className="text-gray-600 mb-6 text-lg">{post.description}</p>
+      <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg">{post.description}</p>
 
       <div
-        className="prose prose-gray max-w-none"
+        className="prose prose-gray dark:prose-invert max-w-none"
         dangerouslySetInnerHTML={{ __html: post.contentHtml }}
       />
     </article>
