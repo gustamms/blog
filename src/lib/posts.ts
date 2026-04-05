@@ -6,54 +6,63 @@ import remarkHtml from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
-export function getAllPosts() {
+interface Post {
+  slug: string;
+  title: string;
+  description: string;
+  tags: string[];
+  date: string;
+  content: string;
+}
+
+function parsePost(fileName: string): Post {
+  const slug = fileName.replace(/\.md$/, '');
+  const fullPath = path.join(postsDirectory, fileName);
+  const fileContent = fs.readFileSync(fullPath, 'utf8');
+  const { data, content } = matter(fileContent) as { data: Record<string, unknown>; content: string };
+
+  return {
+    slug,
+    title: (data.title as string) || 'Sem título',
+    description: (data.description as string) || '',
+    tags: (data.tags as string[]) || [],
+    date: (data.date as string) || '',
+    content,
+  };
+}
+
+export function getAllPosts(): Post[] {
   if (!fs.existsSync(postsDirectory)) {
     return [];
   }
 
   const fileNames = fs.readdirSync(postsDirectory);
 
-  const posts = fileNames
+  return fileNames
     .filter((name) => name.endsWith('.md'))
-    .map((fileName) => {
-      const slug = fileName.replace(/\.md$/, '');
-      const fullPath = path.join(postsDirectory, fileName);
-      const fileContent = fs.readFileSync(fullPath, 'utf8');
-      const { data, content } = matter(fileContent);
-
-      return {
-        slug,
-        title: data.title || 'Sem título',
-        description: data.description || '',
-        tags: data.tags || [],
-        date: data.date || '',
-        content,
-      };
-    })
+    .map((fileName) => parsePost(fileName))
     .sort((a, b) => {
       if (a.date < b.date) return 1;
       if (a.date > b.date) return -1;
       return 0;
     });
-
-  return posts;
 }
 
-export function getPostBySlug(slug: string) {
+export function getPostBySlug(slug: string): Post | null {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
   if (!fs.existsSync(fullPath)) {
     return null;
   }
 
   const fileContent = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContent);
+  const { data, content } = matter(fileContent) as { data: Record<string, unknown>; content: string };
 
   return {
     slug,
-    title: data.title || 'Sem título',
-    description: data.description || '',
-    tags: data.tags || [],
-    date: data.date || '',
+    title: (data.title as string) || 'Sem título',
+    description: (data.description as string) || '',
+    tags: (data.tags as string[]) || [],
+    date: (data.date as string) || '',
     content,
   };
 }
