@@ -34,3 +34,9 @@ console.log(`Olá, ${nome}!`);
 > Isso é citação importante.
 
 Boa escrita!
+
+## Video
+
+Confira esse video sobre Next.js:
+
+[Next.js 15 Full Course](https://www.youtube.com/watch?v=Zq5fmkL0T78)
