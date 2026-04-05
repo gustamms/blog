@@ -21,7 +21,7 @@ export default async function HomePage({
       (p) =>
         p.title.toLowerCase().includes(query) ||
         p.description.toLowerCase().includes(query) ||
-        p.tags.some((t) => t.toLowerCase().includes(query))
+        (p.tags as string[]).some((t) => t.toLowerCase().includes(query))
     );
   }
 
@@ -29,7 +29,7 @@ export default async function HomePage({
     <div>
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">Posts</h1>
-        <p className="text-gray-600">Conteúdos sobre desenvolvimento</p>
+        <p className="text-gray-600 dark:text-gray-400">Conteúdos sobre desenvolvimento</p>
       </div>
 
       <SearchBar className="mb-6" />
