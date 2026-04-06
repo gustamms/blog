@@ -39,4 +39,4 @@ Boa escrita!
 
 Confira esse video sobre Next.js:
 
-[Next.js 15 Full Course](https://www.youtube.com/watch?v=Zq5fmkL0T78)
+[Next.js 15 Full Course](https://www.youtube.com/watch?v=618kkgWaSa0&pp=ygUEcXdlbg%3D%3D)
