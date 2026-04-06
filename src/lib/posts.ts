@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
+import remarkGfm from 'remark-gfm';
 import remarkHtml from 'remark-html';
 import { embedYoutube } from './youtube';
 
@@ -74,7 +75,7 @@ export async function getPostAsHtml(slug: string) {
     return null;
   }
 
-  let processedContent = await remark().use(remarkHtml).process(post.content);
+  let processedContent = await remark().use(remarkGfm).use(remarkHtml).process(post.content);
   let contentHtml = processedContent.toString();
   contentHtml = embedYoutube(contentHtml);
 
