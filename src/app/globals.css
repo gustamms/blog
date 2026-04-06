@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.prose thead th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.prose tbody tr {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.prose tbody td {
+  padding: 0.5rem 1rem;
+}
+
+.dark .prose thead th {
+  border-bottom-color: #374151;
+}
+
+.dark .prose tbody tr {
+  border-bottom-color: #1f2937;
+}
+
+.prose tr:last-child {
+  border-bottom: none;
+}
